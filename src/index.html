@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EHR Test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">EHR Test</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+            <hr/>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+        <form id="submit-patient" onSubmit="App.storePatient(); return false;">
+          <div class="form-group">
+            <label for="name">Patient name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br><br>
+
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight"><br><br>
+
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height"> cm<br><br>
+
+            <label for="sex">Sex:</label>
+            <select id="sex">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="history">Medical History:</label>
+            <textarea rows="2" 
+                  cols="50" 
+                  name="history" 
+                  id="history"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Store Patient</button>
+          <hr />
+        </form>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
